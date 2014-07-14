@@ -16,7 +16,7 @@ Help-Topics:
   Getting Started: https://www.openshift.com/videos/getting-started-with-diy-applications-on-openshift
 Provides:
 Publishes: 
-Source-Url: https://github.com/webratio/openshift.git
+Source-Url: https://github.com/webratio/openshift.git/openshift-origin-cartridge-webratioapp
 Subscribes:
   set-env:
     Type: ENV:*
