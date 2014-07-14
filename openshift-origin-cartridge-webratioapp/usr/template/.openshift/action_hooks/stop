@@ -1,0 +1,6 @@
+#!/bin/bash
+# The logic to stop your application should be put in this script.
+echo "stopping application server"
+cd ${OPENSHIFT_DATA_DIR}/tomcat/bin
+sh shutdown.sh
+echo "application server stopped"

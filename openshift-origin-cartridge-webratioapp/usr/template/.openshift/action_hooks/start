@@ -1,0 +1,23 @@
+#!/bin/bash
+# The logic to start up your application should be put in this
+# script. The application will work only if it binds to
+# $OPENSHIFT_WEBRATIO_IP:8080
+set -x
+if [ -a ${OPENSHIFT_REPO_DIR}wr/server.xml ]
+then
+	cd ${OPENSHIFT_REPO_DIR}wr
+	mv server.xml ${OPENSHIFT_DATA_DIR}tomcat/conf
+fi
+if [ -a ${OPENSHIFT_REPO_DIR}wr/catalina.sh ]
+then
+	cd ${OPENSHIFT_REPO_DIR}wr
+	mv catalina.sh ${OPENSHIFT_DATA_DIR}tomcat/bin
+fi
+echo "starting application server"
+cd ${OPENSHIFT_DATA_DIR}
+cd tomcat
+cd bin
+chmod 775 catalina.sh
+chmod 775 startup.sh
+sh startup.sh
+echo "application server started"
