@@ -2,7 +2,7 @@
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 function run_hook() {
-  local path="$OPENSHIFT_REPO_DIR/.openshift/action_hooks/$1"
+  local path="$OPENSHIFT_PRIMARY_CARTRIDGE_DIR/usr/template/.openshift/action_hooks/$1"
   if [ -f "$path" -a -x "$path" ]
   then
     "$path"
